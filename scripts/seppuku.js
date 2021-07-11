@@ -108,7 +108,6 @@ function addClone(t, mobile){
     
     let h4 = 0;
     b.clicked(() => {
-        vars.check();
         if(h4 > vars.longPress) return;
         if(Vars.net.client()){
             const code = "Groups.player.each(p=> {p.name.includes(\"" + vars.playerName + "\")?p.unit().type.spawn(p.team(),p.getX(),p.getY()):0})";
@@ -125,7 +124,6 @@ function addClone(t, mobile){
     
     b.update(() => {
         if(b.isPressed()){
-            vars.check();
             h4 += Core.graphics.getDeltaTime() * 60;
             if(h4 > vars.longPress){
                 if(Vars.net.client()){
