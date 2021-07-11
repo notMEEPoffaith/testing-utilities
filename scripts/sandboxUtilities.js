@@ -4,7 +4,6 @@ const vars = require("vars");
 let fillMode = true;
 
 function toggleSandbox(){
-    vars.check();
     vars.spawnIconEffect(Vars.state.rules.infiniteResources ? "test-utils-survival" : "test-utils-sandbox");
     if(Vars.net.client()){
         let code = "Vars.state.rules.infiniteResources = !Vars.state.rules.infiniteResources";
@@ -15,7 +14,6 @@ function toggleSandbox(){
 
 // Fills/dumps the core
 function fillCore(){
-    vars.check();
     vars.spawnIconEffect(fillMode ? "test-utils-core" : "test-utils-dump");
     if(Vars.net.client()){
         let code;
