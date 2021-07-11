@@ -31,17 +31,14 @@ function applyRemote(perma){ // Multiplayer
 }
 
 function apply(){
-    vars.check();
     (Vars.net.client() ? applyRemote : applyLocal)(false);
 }
 
 function applyPerma(){
-    vars.check();
     (Vars.net.client() ? applyRemote : applyLocal)(true);
 }
 
 function clearStatuses(){
-    vars.check();
     if(Vars.net.client()){
         let code = [
             "Groups.player.each(p=> {p.name.includes(\"",
