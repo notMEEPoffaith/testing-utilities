@@ -19,7 +19,6 @@ function healButton(){
     b.label(() => b.isDisabled() ? "[gray]Heal[]" : "[white]Heal[]").padLeft(0);
     
     b.clicked(() => {
-        vars.check();
         if(Vars.net.client()){
             let code = "Groups.player.each(p=> {p.name.includes(\"" + vars.playerName + "\")?p.unit().dead=false:0})";
             Call.sendChatMessage("/js " + code);
@@ -65,7 +64,6 @@ function invincibilityButton(){
     b.label(() => b.isDisabled() ? "[gray]Invincibility[]" : "[white]Invincibility[]").padLeft(0);
     
     b.clicked(() => {
-        vars.check();
         if(Vars.net.client()){
             let code = "Groups.player.each(p=> {p.name.includes(\"" + vars.playerName + "\")?p.unit().dead=false:0})";
             Call.sendChatMessage("/js " + code);
